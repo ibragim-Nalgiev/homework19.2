@@ -1,0 +1,42 @@
+[
+  {
+    "fields":{
+      "description":"продажа ноубуков от компании Apple",
+      "title":"Ноутбуки"
+    },
+    "model":"catalog.category",
+    "pk":1
+  },
+  {
+    "model":"catalog.category",
+    "pk":2,
+    "fields":{
+      "title":"Телефоны",
+      "description":"продажа телефонов от компании Apple"
+    }
+  },
+  {
+    "model":"catalog.category",
+    "pk":3,
+    "fields":{
+      "title":"Наушники",
+      "description":"продажа наушников от компании Apple"
+    }
+  },
+  {
+    "model":"catalog.category",
+    "pk":4,
+    "fields":{
+      "title":"Часы",
+      "description":"продажа часов от компании Apple"
+    }
+  },
+  {
+    "model":"catalog.category",
+    "pk":5,
+    "fields":{
+      "title":"Планшеты",
+      "description":"продажа планшетов от компании Apple"
+    }
+  }
+]
