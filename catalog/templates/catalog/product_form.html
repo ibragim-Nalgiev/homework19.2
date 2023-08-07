@@ -1,0 +1,34 @@
+{% extends 'catalog/base.html' %}
+{% block title %}
+    {% if object %}
+    Изменить название продукта
+    {% else %}
+    Добавить новый продукт
+    {% endif %}
+{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="col-md-6 offset-md-3">
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success btn-sm">
+                {% if object %}
+                Сохранить изменения
+                {% else %}
+                Добавить
+                {% endif %}
+            </button>
+            <a href="{% url 'catalog:home' %}" class="btn btn-primary btn-sm">Отмена</a>
+            <div class="card-body">
+                    {{ formset.management_form }}
+                    {% for form in formset.forms %}
+                        {{ form.as_p }}
+                    {% endfor %}
+                </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

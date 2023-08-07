@@ -5,7 +5,9 @@
     <h1 class="display-4">Skystore</h1>
     <p class="lead">Skystore - это отличный онлайн магазин с продукцией Apple</p>
 </div>
-<div class="container">
+  <div class="col-12 mb-6">
+      <a class="btn btn-outline-primary" href="{% url 'catalog:product_create' %}" >Добавить товар</a>
+  <div class="container">
     <div class="row text-center">
         {% for object in object_list %}
         <div class="col-3">
@@ -13,7 +15,8 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ object.title }}</h5>
                     <p class="card-text">{{ object|truncatechars:100  }}</p>
-                      <a href="/product_detail/" class="btn btn-primary">Купить</a>
+                      <a class="btn btn-primary" href="{% url 'catalog:product_detail' object.pk %}" >О товаре</a>
+                      <a class="btn btn-primary" href="{% url 'catalog:product_delete' object.pk %}" >Удалить</a>
                 </div>
             </div>
         </div>

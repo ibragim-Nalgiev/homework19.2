@@ -7,18 +7,24 @@
 </div>
 <div class="container">
     <div class="row text-center">
-        {% for object in object_list %}
-        <div class="col-3">
+        <div class="col-6 mb-5">
             <div class="card" style="width: 18rem;">
                 <img class="rounded mx-auto d-block" src="{{ object.image|upload_media }}" alt="Product Image" width="60%" height="40%">
             <div class="card-body">
                 <h5 class="card-title">{{ object.title }}</h5>
                 <p class="card-text">{{ object|truncatechars:100 }}</p>
-                <a href="/" class="btn btn-primary">Главная</a>
+                 {% for version in product.version.all %}
+                    <p class="card-text">
+                        {% if version.is_active %}
+                        {{ version.version_title }}
+                        {{ version.version_number}}
+                        {% endif %}
+                    </p>
+                  {% endfor %}
+                <a href="/" class="btn btn-primary">Каталог</a>
             </div>
         </div>
     </div>
-    {% endfor %}
 </div>
 </div>
 {% endblock %}
